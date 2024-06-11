@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant-Based App Notifications</title>
+    <style>
+        #notification-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(144, 238, 144, 0.4); /* Change modal background color here */
+        }
+
+        #modal-content {
+            background-color: #fefefe5e;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        #modal-content h2 {
+            margin-top: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #modal-content p {
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #modal-content button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            cursor: pointer;
+            background-color: #4caf50; /* Initial button color */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        #modal-content button:hover {
+            background-color: #45a049; /* Button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="notification-modal">
+        <div id="modal-content">
+            <h2>GUARDIANA</h2>
+            <p>We'd love to keep you updated with plant care tips and more. Would you like to receive notifications?</p>
+            <button id="allow-notifications">Yes</button>
+            <button id="deny-notifications">No</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('notification-modal');
+            modal.style.display = 'block';
+
+            document.getElementById('allow-notifications').addEventListener('click', () => {
+                requestNotificationPermission();
+                modal.style.display = 'none';
+            });
+
+            document.getElementById('deny-notifications').addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Request notification permission on page load
+            requestNotificationPermission();
+        });
+
+        function requestNotificationPermission() {
+            if ('Notification' in window) {
+                Notification.requestPermission().then(permission => {
+                    console.log('Permission status:', permission);
+                    if (permission === 'granted') {
+                        console.log('Notification permission granted.');
+                        showImmediateNotifications();
+                    } else {
+                        console.log('Notification permission denied.');
+                    }
+                }).catch(error => {
+                    console.error('Permission request error:', error);
+                });
+            } else {
+                console.log('This browser does not support notifications.');
+            }
+        }
+
+        function showNotification(title, body) {
+            const options = {
+                body: body,
+                icon: 'https://via.placeholder.com/128',
+                badge: 'https://via.placeholder.com/64'
+            };
+            new Notification(title, options);
+        }
+
+        function showImmediateNotifications() {
+            const messages = [
+                "Hey there! I'm feeling a bit parched. Could you spare some water? 🌱💧",
+                "Good day, friend! It's me, your leafy companion. I'm longing for a refreshing drink. Care to oblige? 🌿💦",
+                "Hey, buddy! I'm feeling a bit wilted. Could you quench my thirst? 🌻💧",
+                "Hello there, green thumb! I'm in need of a drink to keep me looking my best. Would you mind watering me? 🌺💦",
+                "Hi, friend! I'm starting to feel a bit dry. A splash of water would really hit the spot! 🌼💧",
+                "Hey, plant lover! I'm craving a cool drink to beat the heat. Can you help me out? 🌞💧",
+                "Hello, plant pal! I'm feeling a bit parched. Could you give me a drink to perk me up? 🌻💦",
+                "Hi, gardener! I'm in need of a refreshing drink to keep me healthy and strong. Would you mind watering me? 🌱💧",
+                "Hey, plant enthusiast! I'm starting to feel a bit dehydrated. A drink would really revive me! 🌿💦",
+                "Hello, plant friend! I'm feeling a bit dry and crispy. A splash of water would be just what I need! 🌸💧"
+
+                // Add more messages as needed
+            ];
+            let delay = 0;
+
+            messages.forEach(message => {
+                setTimeout(() => {
+                    showNotification("Plant Care Reminder", message);
+                }, delay);
+                delay += 5000; // 5 seconds delay between notifications
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #aec7977b;
+        }
+        .marquee {
+            background-color: #214f38;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .marquee-content {
+            font-size: medium;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fcfcfc;
+            padding: 30px 30px 10px 10px; /* Adjusted padding */
+            position: sticky;
+            width:97%; /* Adjusted width */
+            margin: auto; /* Centered navbar */
+            top: 1px; /* Adjusted to accommodate marquee */
+            z-index: 999;
+        }
+        .navbar .logo img {
+            height: 100px; /* Increased logo size */
+            width: 205px; /* Increased logo size */
+            border-radius: 50%;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .greeting {
+            color: #75737d;
+            font-size: 1.2em;
+            margin-left: 20px; /* Spacing between translate and greeting */
+        }
+        #google_translate_element {
+            margin-right: 20px; /* Spacing to the right */
+        }
+        .containing
+        {
+            background-color: #214f38;
+        }
+        .containing h1{
+            color :#f5deb3;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20PX;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #000000; /* Default color */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff; /* Green color on hover */
+}
+.containur {
+            margin: 20px auto;
+            padding: 20px;
+            background-color:  #c1ebc6;;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 93%; 
+        }
+</style>
+</head>
+<body>
+<div class="marquee">
+    <div class="marquee-content">
+        Your Plant's Personal Guardian: Detecting Disease, Ensuring Care &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Your Plant's Personal Guardian: Detecting Disease, Ensuring Care
+    </div>
+</div>
+<header class="navbar">
+    <div class="logo">
+        <img src="/static/sara.png" alt="Guardiana Logo">
+    </div>
+    <div class="right-section">
+        <div id="google_translate_element"></div>
+        <div class="greeting">
+            Hello, Sara
+        </div>
+    </div>
+</header>
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+<center>
+    <div class ="containing">
+        <h1>Grapevine</h1>  
+    </div>
+</center>
+<div class="containur">
+    <br><br>
+    <center>
+    <img src="/static/grapevine.png" width="200" height="200" alt="Grapes">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="/static/grapevine2.png" alt="Grapes" width="250" height="200"></center>
+    <br><br>
+    <br><br>
+    <b>SCIENTIFIC NAME :</b> Vitis vinifera<br><br>
+    <b>COMMON NAME :</b> Grape<br><br>
+    <b>ORIGIN :</b> Near East<br><br>
+    <b>SCIENTIFIC CLASSIFICATION:</b>
+    <ul type="circle">
+        <li><b>Kingdom:</b> Plantae</li>
+        <li><b>Division:</b> Angiosperms</li>
+        <li><b>Order:</b> Vitales</li>
+        <li><b>Family:</b> Vitaceae</li>
+        <li><b>Genus:</b> Vitis</li>
+    </ul>
+    <b>CULTIVATION TIPS:</b>
+    <dl>
+        <b>Sunlight :</b>
+        <dt>1. Grapevines thrive in full sunlight.</dt>
+        <dt>2. They should receive at least 6-8 hours of direct sunlight each day.</dt>
+        <dt>3. Adequate sunlight is essential for fruit development and ripening.</dt>
+    </dl>
+    <dl>
+        <b>Watering :</b>
+        <dt>1. Grapevines require regular watering, especially during the growing season.</dt>
+        <dt>2. Water deeply and infrequently to encourage deep root growth.</dt>
+        <dt>3. Ensure the soil is well-draining to prevent waterlogging and root diseases.</dt>
+    </dl>
+    <dl>
+        <b>Temperature :</b>
+        <dt>1. Grapevines grow best in temperatures between 60°F (15°C) and 85°F (29°C).</dt>
+        <dt>2. They can tolerate a range of temperatures but may suffer in extreme heat or cold.</dt>
+        <dt>3. In colder climates, protection is needed during winter to prevent frost damage.</dt>
+    </dl>
+    <dl>
+        <b>Soil Type:</b>
+        <dt>1. Grapevines prefer well-draining, loamy soil.</dt>
+        <dt>2. A slightly acidic to neutral pH range of 6.0 to 7.5 is ideal.</dt>
+        <dt>3. Soil should be enriched with organic matter, such as compost, to improve fertility.</dt>
+        <dt>4. Good drainage is crucial to prevent root rot and other soil-borne diseases.</dt>
+    </dl>
+    <br>
+    <b>USES:</b>
+    <ul type="circle">
+        <li><b>Food:</b> Consumed fresh, dried as raisins, or processed into juice and wine.</li>
+        <li><b>Health:</b> Grapes are rich in antioxidants, vitamins, and minerals, offering various health benefits.</li>
+        <li><b>Culinary:</b> Used in cooking and baking, enhancing the flavor of dishes and desserts.</li>
+        <li><b>Skincare:</b> Grape seed extract is used in skincare products for its moisturizing and antioxidant properties.</li>
+        <li><b>Industrial:</b> Grape by-products are used in making vinegar, oil, and other products.</li>
+    </ul>
+</div>     
+</body>
+<footer class="footer">
+    <p>&copy; 2024 Guardiana. All rights reserved.</p>
+    <div class="social-media">
+        <a href="https://www.instagram.com/saradawood_s/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@sadsyt1178" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/saradawoodssd" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+   
+</footer>
+</html>

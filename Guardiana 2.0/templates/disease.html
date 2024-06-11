@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseased Leaf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #aec7977b;
+        }
+        .marquee {
+            background-color: #214f38;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .marquee-content {
+            font-size: medium;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fcfcfc;
+            padding: 30px 30px 10px 10px; /* Adjusted padding */
+            position: sticky;
+            width:97%; /* Adjusted width */
+            margin: auto; /* Centered navbar */
+            top: 1px; /* Adjusted to accommodate marquee */
+            z-index: 999;
+        }
+        .navbar .logo img {
+            height: 100px; /* Increased logo size */
+            width: 205px; /* Increased logo size */
+            border-radius: 50%;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .greeting {
+            color: #75737d;
+            font-size: 1.2em;
+            margin-left: 20px; /* Spacing between translate and greeting */
+        }
+        #google_translate_element {
+            margin-right: 20px; /* Spacing to the right */
+        }
+        .containing
+        {
+            background-color: #214f38;
+        }
+        .containing h1{
+            color :#f5deb3;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20PX;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #000000; /* Default color */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff; /* Green color on hover */
+}
+button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            background-color: Darkgreen;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .containur {
+            margin: 20px auto;
+            padding: 20px;
+            background-color:  #c1ebc6;;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 93%; 
+        }
+        .containur-inner {
+            margin-left:30% ;
+            margin-right: 34%;
+            border-color: #000000;
+            padding: 20px;
+            background-color: #ecdddd48;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="marquee">
+        <div class="marquee-content">
+            Your Plant's Personal Guardian: Detecting Disease, Ensuring Care &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Your Plant's Personal Guardian: Detecting Disease, Ensuring Care
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="/static/sara.png" alt="Guardiana Logo">
+        </div>
+        <div class="right-section">
+            <div id="google_translate_element"></div>
+            <div class="greeting">
+                Hello, Sara
+            </div>
+        </div>
+    </header>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <center>
+        <div class ="containing">
+            <h1>Peanut Leaf: Early Leaf Spot</h1>  
+        </div>
+    </center>
+    <div class="containur">
+        <br><br>
+    <div class="containur-inner">
+            <center>
+                <img src="/static/peanut leaf.jpg" width="400" height="200" alt="Peanut Leaf">
+            </center>
+        </div>
+        <br><br>
+        <h2>Peanut Leaf</h2>
+        <p>
+            Peanut leaves are compound leaves, typically with four leaflets arranged oppositely. Each leaflet is oval-shaped and has a pointed tip. The leaves are bright green in color and can grow up to several inches in length.
+        </p>
+        <h2><u>Preventive Measures for Early Leaf Spot :</u></h2>
+        <ul>
+            <li><strong>Crop Rotation:</strong> Rotate peanut crops with non-host plants to reduce the buildup of pathogens in the soil.</li>
+            <li><strong>Plant Resistant Varieties:</strong> Choose peanut varieties that are resistant to Early Leaf Spot.</li>
+            <li><strong>Proper Spacing:</strong> Ensure proper spacing between plants to improve air circulation and reduce humidity around the plants.</li>
+            <li><strong>Weed Control:</strong> Keep the area around the peanut plants free from weeds to prevent the spread of the disease.</li>
+            <li><strong>Sanitation:</strong> Remove and destroy any infected plant debris promptly to prevent the spread of the disease.</li>
+            <li><strong>Irrigation Management:</strong> Avoid overhead irrigation and use drip irrigation to reduce humidity and prevent fungal growth.</li>
+        </ul>
+        <br>
+        <form id="medicineForm">
+            <input type="radio" id="synthetic" name="medicineType" value="synthetic">
+            <label for="synthetic"><b>Organic</b></label>
+            <input type="radio" id="organic" name="medicineType" value="organic">
+            <label for="organic"><b>Synthetic</b></label>
+            
+        </form>
+        <div id="medicineInfo" style="display: none;">
+            <!-- Placeholder for medicine information -->
+        </div>
+   
+</div>
+
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+
+    document.getElementById("medicineForm").addEventListener("change", function() {
+        var selectedMedicine = document.querySelector('input[name="medicineType"]:checked').value;
+        var medicineInfoContainer = document.getElementById("medicineInfo");
+        medicineInfoContainer.style.display = "block";
+
+        if (selectedMedicine === "synthetic") {
+            medicineInfoContainer.innerHTML = "<h3>Tips: </h3><p><ul><li>Use neem oil: Apply neem oil, a natural fungicide, to help control Early Leaf Spot.</li><li>Rotate crops: Practice crop rotation to reduce the buildup of pathogens in the soil.</li><li>Enhance soil health: Improve soil structure and nutrient levels with compost and organic amendments.</li><li>Plant resistant varieties: Choose crop varieties that are resistant to Early Leaf Spot.</li><li>Practice good sanitation: Remove and destroy infected plant debris to prevent the spread of disease.</li><li>Use beneficial microbes: Apply microbial inoculants to the soil to promote the growth of beneficial microorganisms that can suppress pathogens.</li><li>Implement companion planting: Planting companion crops that repel pests or attract beneficial insects can help reduce disease pressure.</li></ul></p>";
+        } else if (selectedMedicine === "organic") {
+            medicineInfoContainer.innerHTML = "<p><b>Rafale-500gm</b> can be effective against Early Leaf Spot. Mix the powder with water and spray it on the leaves.</h3><h3>Procedure :</h3><ul><li>Measure Rafale powder .</li><li>Mix with water thoroughly.</li><li>Start from the farthest end.</li><li>Maintain consistent pressure and speed.</li><li>Cover upper and lower leaf surfaces evenly.</li><li>Avoid runoff and overlap.</li><li>Choose a dry day with no rain expected for 24 hours.</li></ul></p><center><img src='/static/rafale.png' width='150' height='200'><br><br><button onclick=\"window.open('https://www.flipkart.com/origin-rafale-500-gm-fungicide-soil-manure/p/itmc850c212d3f7e?pid=SMNGU6NATU3NRSFU&lid=LSTSMNGU6NATU3NRSFU8CKPFJ&marketplace=FLIPKART', '_blank')\">Buy Product</button></center>";
+        }
+    });
+</script><br><br><br>
+<footer class="footer">
+    <p>&copy; 2024 Guardiana. All rights reserved.</p>
+    <div class="social-media">
+        <a href="https://www.instagram.com/saradawood_s/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@sadsyt1178" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/saradawoodssd" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+   
+</footer>
+
+</body>
+</html>
+
+    

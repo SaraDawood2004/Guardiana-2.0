@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Classification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #aec7977b;
+        }
+        .marquee {
+            background-color: #214f38;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .marquee-content {
+            font-size: medium;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fcfcfc;
+            padding: 30px 30px 10px 10px; /* Adjusted padding */
+            position: sticky;
+            width:97%; /* Adjusted width */
+            margin: auto; /* Centered navbar */
+            top: 1px; /* Adjusted to accommodate marquee */
+            z-index: 999;
+        }
+        .navbar .logo img {
+            height: 100px; /* Increased logo size */
+            width: 205px; /* Increased logo size */
+            border-radius: 50%;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .greeting {
+            color: #75737d;
+            font-size: 1.2em;
+            margin-left: 20px; /* Spacing between translate and greeting */
+        }
+        #google_translate_element {
+            margin-right: 20px; /* Spacing to the right */
+        }
+        .containing
+        {
+            background-color: #214f38;
+        }
+        .containing h1{
+            color :#f5deb3;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20PX;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #000000; /* Default color */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff; /* Green color on hover */
+}
+.container {
+            margin: 20px;
+            padding: 20px;
+            background-color:  #c1ebc6;;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            margin-top: 0;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            background-color: Darkgreen;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+</style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="marquee-content">
+            Your Plant's Personal Guardian: Detecting Disease, Ensuring Care &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Your Plant's Personal Guardian: Detecting Disease, Ensuring Care
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="/static/sara.png" alt="Guardiana Logo">
+        </div>
+        <div class="right-section">
+            <div id="google_translate_element"></div>
+            <div class="greeting">
+                Hello, Sara
+            </div>
+        </div>
+    </header>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <center>
+        <div class ="containing">
+            <h1>Plant</h1>  
+        </div>
+    </center>
+    <div class="container" id="herbsContainer">
+        <h2>HERBS</h2>
+        <center>
+        <img src =/static/herbs.jpeg>
+    </center>
+    <br>
+        <label for="herbs">Enter herb name:</label><br><br>
+        <input type="text" name="herbs" id="herbs"><br><br>
+        <button onclick="window.location.href='/herb'" type="button">SEARCH</button>
+        <p><b>Note :</b> Herbs are plants with savory or <b><i>aromatic properties</i></b>.
+                 They are <i><b>short-sized </b></i>plants with <b><i>soft</i></b>, green, delicate stems without woody tissues.
+                 Most Herbs complete their life cycle within <i><b>one or two seasons</b></i>.<br><br>
+            <b>  Examples :</b> Basil, Coriander, Fennel, Rosemary, and Mint</p>
+    </div>
+
+    <div class="container" id="shrubsContainer">
+        <h2>SHRUBS</h2>
+        <center>
+        <img src =/static/shrubs.jpeg width="30%">
+    </center>
+    <br>
+        <label for="shrubs">Enter shrub name:</label><br><br>
+        <input type="text" name="shrubs" id="shrubs"><br><br>
+        <button onclick="window.location.href='/shrub'" type="button">SEARCH</button>
+        <p><b>Note :</b> Shrubs are medium-sized, woody plants <b><i>taller than herbs but shorter than trees</i></b>.
+            They have <b><i>bushy, hard,</i></b> and woody stems with many branches.
+            <br><br> <b>Examples</b> : Rose, Jasmine, Lemon, Tulsi, and Henna</p>
+    </div>
+
+    <div class="container" id="treesContainer">
+        <h2>TREES</h2>
+        <center>
+            <img src =/static/trees.jpeg height="30%" width="20%">
+        </center>
+        <br>
+        <label for="trees">Enter tree name:</label>
+        <br><br>
+        <input type="text" name="trees" id="trees"><br><br>
+        <button onclick="window.location.href='/tree'" type="button">SEARCH</button>
+        <p><b>Note : </b>Trees are <b><i>big and tall</i></b> plants with an <b><i>elongated</i></b> stem or trunk.<br><br>
+             <b>Examples : </b>Oak, Pine, and Banyan</p>
+    </div>
+
+    <div class="container" id="climbersContainer">
+        <h2>CLIMBERS</h2>
+        <center>
+        <img src =/static/climbers.jpeg>
+    </center>
+    <br>
+        <label for="climbers">Enter climber name:</label><br><br>
+        <input type="text" name="climbers" id="climbers"><br><br>
+        <button onclick="window.location.href='/climber'" type="button">SEARCH</button>
+        <p><b>Note :</b> Climbers are plants that <b><i>grow upwards</i></b> by clinging to a support.<br>
+                         They often have specialized structures like tendrils, twining stems, or clinging roots that help them <b><i>attach and climb</i></b>. <br><br>
+                         <b>Examples :</b> Gourds, Jasmine, Cucumber, and Grapevine</p>
+    </div>
+    <script>
+        function searchPlant(type) {
+            var query = document.getElementById(type).value;
+            if (query) {
+                window.location.href = 'https://www.example.com/search?q=' + encodeURIComponent(query) + '+' + type;
+            } else {
+                alert('Please enter a ' + type + ' name.');
+            }
+        }
+    </script>
+     <footer class="footer">
+        <p>&copy; 2024 Guardiana. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/saradawood_s/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@sadsyt1178" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saradawoodssd" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        
+       
+    </footer>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #aec7977b;
+        }
+        .marquee {
+            background-color: #214f38;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .marquee-content {
+            font-size: medium;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fcfcfc;
+            padding: 30px 30px 10px 10px; /* Adjusted padding */
+            position: sticky;
+            width:97%; /* Adjusted width */
+            margin: auto; /* Centered navbar */
+            top: 1px; /* Adjusted to accommodate marquee */
+            z-index: 999;
+        }
+        .navbar .logo img {
+            height: 100px; /* Increased logo size */
+            width: 205px; /* Increased logo size */
+            border-radius: 50%;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .greeting {
+            color: #75737d;
+            font-size: 1.2em;
+            margin-left: 20px; /* Spacing between translate and greeting */
+        }
+        #google_translate_element {
+            margin-right: 20px; /* Spacing to the right */
+        }
+        .containing
+        {
+            background-color: #214f38;
+        }
+        .containing h1{
+            color :#f5deb3;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20PX;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #000000; /* Default color */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff; /* Green color on hover */
+}
+button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            background-color: Darkgreen;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .containur {
+            margin: 20px auto;
+            padding: 20px;
+            background-color:  #c1ebc6;;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 93%; 
+        }
+      
+    </style>
+</head>
+<body>  
+    <div class="marquee">
+        <div class="marquee-content">
+            Your Plant's Personal Guardian: Detecting Disease, Ensuring Care &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Your Plant's Personal Guardian: Detecting Disease, Ensuring Care
+        </div>
+    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="/static/sara.png" alt="Guardiana Logo">
+        </div>
+        <div class="right-section">
+            <div id="google_translate_element"></div>
+            <div class="greeting">
+                Hello, Sara
+            </div>
+        </div>
+    </header>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <center>
+        <div class ="containing">
+            <h1>Tomato</h1>  
+        </div>
+    </center>
+    <div class="containur">
+        <br><br>
+   
+            <center>
+                <img src="/static/tom1.png" width="300" height="200" alt="Tomato">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="/static/tom plant.png" alt="Tomato" width="250" height="300"></center>
+
+            </center>
+        
+        <br><br>
+        <b>SCIENTIFIC NAME :</b> Solanum lycopersicum<br><br>
+        <b>COMMON NAME :</b> Tomato<br><br>
+        <b>ORIGIN :</b> South America<br><br>
+        <b>SCIENTIFIC CLASSIFICATION:</b>
+        <ul type="circle">
+            <li><b>Kingdom:</b> Plantae</li>
+            <li><b>Division:</b> Angiosperms</li>
+            <li><b>Order:</b> Solanales</li>
+            <li><b>Family:</b> Solanaceae</li>
+            <li><b>Genus:</b> Solanum</li>
+        </ul>
+        <b>CULTIVATION TIPS:</b>
+        <dl>
+            <b>Sunlight :</b>
+            <dt>1. Tomatoes thrive in full sunlight.</dt>
+            <dt>2. They should receive at least 6-8 hours of direct sunlight each day.</dt>
+            <dt>3. They can tolerate partial shade, but full sunlight promotes optimal growth.</dt>
+        </dl>
+        <dl>
+            <b>Watering :</b>
+            <dt>1. Young tomato plants require regular watering to establish roots.</dt>
+            <dt>2. Mature plants are drought-tolerant but benefit from occasional deep watering.</dt>
+            <dt>3. Ensure the soil is well-draining to prevent waterlogging, which can harm the roots.</dt>
+        </dl>
+        <dl>
+            <b>Temperature :</b>
+            <dt>1. Tomatoes prefer warm temperatures.</dt>
+            <dt>2. They grow best in temperatures between 65°F (18°C) and 85°F (29°C).</dt>
+            <dt>3. They are sensitive to frost and should be protected in cooler climates.</dt>
+        </dl>
+        <dl>
+            <b>Soil Type:</b>
+            <dt>1. Tomatoes prefer well-draining soil rich in organic matter.</dt>
+            <dt>2. They thrive in slightly acidic to neutral pH soil (6.0-7.0).</dt>
+            <dt>3. Soil should be enriched with compost or aged manure for optimal growth.</dt>
+            <dt>4. Avoid compacted or waterlogged soil to prevent root rot.</dt>
+        </dl>
+        <br>
+        <b>USES:</b>
+        <ul type="circle">
+            <li><b>Culinary:</b> Used in a wide variety of dishes, including salads, sauces, and soups.</li>
+            <li><b>Medicinal:</b> Contains beneficial nutrients like vitamin C and antioxidants.</li>
+            <li><b>Ornamental:</b> Some tomato varieties are grown for their attractive foliage and fruits in gardens.</li>
+            <li><b>Commercial:</b> Grown on a large scale for commercial production of processed products like ketchup and tomato paste.</li>
+            <li><b>Home Gardening:</b> Popular choice for home gardeners due to ease of cultivation and versatility in cooking.</li>
+        </ul>
+    </div>
+</body>
+<footer class="footer">
+    <p>&copy; 2024 Guardiana. All rights reserved.</p>
+    <div class="social-media">
+        <a href="https://www.instagram.com/saradawood_s/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@sadsyt1178" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/saradawoodssd" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+   
+</footer>
+
+</html>

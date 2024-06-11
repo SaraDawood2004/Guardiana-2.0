@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardiana </title>
+    <style>
+         .navbar .greeting {
+            color: #75737d;
+            font-size: 1.2em;
+            margin-left: 10px; /* Spacing between translate and greeting */
+        }
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #aec7977b;
+}
+.letter {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    color :#113222;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Marquee */
+.marquee {
+    background-color: #214f38;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.marquee-content {
+    font-size: medium;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Navigation Bar */  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fcfcfc;
+    padding: 90px 0px 50px; /* Adjusted padding */
+    height: 0cm; /* Adjusted height */
+    position: sticky;
+    width:100%;
+    height: 2px;
+    top: 0;
+    z-index: 999;
+    
+}
+.inner-box {
+    background-color: rgba(242, 239, 239, 0.5);
+    padding: 50px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 650px;
+    margin: 30px;
+    color: #000000;
+}
+
+.inner-box h1 {
+    margin-top: 0;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.inner-box p {
+    margin: 20px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar .logo img {
+    height: 100px; /* Increased logo size */
+    width: 205px; /* Increased logo size */
+    border-radius: 50%;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar .menu li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: #75737d;
+    text-decoration: none;
+    margin: 10px 20px 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.3s ease; /* Transition for smooth effect */
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline; /* Underline text on hover */
+    transform: scale(1.5); /* Slightly increase text size on hover */
+}
+
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/plannnt.png'); /* Hero background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* Apply blur effect */
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Add dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #1E5F3D;
+}
+.search-button {
+    background-color:transparent;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button:hover {
+    background-color: #1E5F3D;
+}
+/* Services Section */
+.services {
+    padding: 20px 20px;
+    text-align: center;
+}
+.services .service-item div {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Footer */
+.footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.circle-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 10px;
+
+}
+.circle-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #2e524a;
+    color: white;
+    border: none;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.circle-button + h4{
+    display: inline-block;
+    padding-top: 100px;
+    margin-left: 50px;
+}
+.circle-button + p {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.circle-button:hover {
+    transform: scale(1.2); /* Increase size on click */
+    background-color: #3d8060; /* Change color on click */
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.174); /* Light transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 10px 50px 10px; /* Space around the content */
+    margin-right: 20px;
+    margin-left: 40px; /* Spacing between containers */
+}
+
+
+.about-content h2 {
+    color: #333; /* Darker text color */
+}
+
+.about-content p {
+    color: #666; /* Slightly darker text color */
+}
+
+.about-content ul li {
+    color: #666; /* Slightly darker text color for list items */
+}
+
+.contact-content h2 {
+    color: #333; /* Darker text color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.contact-content p {
+    color: #666; /* Slightly darker text color */
+    line-height: 1.6; /* Increased line height for readability */
+    margin-bottom: 20px; /* Space below paragraphs */
+}
+
+.about-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between containers */
+    padding: 50px; /* Add padding as needed */
+    background: linear-gradient(180deg, #f2f2f2 0%, #90bf98d9 100%); /* Gradient background */
+
+}
+
+.container {
+    flex: 1; /* Equal width for containers */
+    margin-right: 20px; /* Space between containers */
+    background-color: rgba(255, 255, 255, 0.061); /* Light transparent background */
+    padding: 20px; /* Inner padding for content */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.about-content h2,
+.contact-content h2 {
+    color: #333; /* Darker text color for headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+.about-content p,
+.contact-content p {
+    color: #666; /* Slightly darker text color for paragraphs */
+    line-height: 1.6; /* Increased line height for readability */
+    margin-bottom: 10px; /* Space below paragraphs */
+}
+
+.contact-details p {
+    color: #333; /* Darker text color for contact details */
+    margin-bottom: 10px; /* Space between contact details */
+}
+
+.contact-details {
+    margin-bottom: 20px; /* Space below contact details */
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #000000; /* Default color */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffffff; /* Green color on hover */
+}
+#notification-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        #modal-content {
+            background-color: #fefefe48;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 200px;
+            text-align: center;
+            border-radius: 20px;
+
+        }
+
+        #modal-content h2 {
+            margin-top: 0;
+        }
+
+        #modal-content button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50; /* Initial button color */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        #modal-content button:hover {
+            background-color: #45a049; /* Button color on hover */
+        }
+   </style>
+   <script>
+
+    function toggleSearchBar() {
+        var searchBar = document.getElementById('searchBar');
+        if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+            searchBar.style.display = 'block';
+        } else {
+            searchBar.style.display = 'none';
+        }
+    }
+    function openLoginPage() {
+        document.getElementById('loginModal').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('signupForm').style.display = 'none';
+    }
+    
+    function openSignUpPage() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('signupForm').style.display = 'block';
+    }
+    
+    function closeModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+    
+    function login() {
+        // Add login functionality here
+        alert("Logged in!");
+        closeModal();
+    }
+    
+    function signup() {
+        // Add signup functionality here
+        alert("Signed up!");
+        closeModal();
+    }
+    
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('loginModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    document.getElementById('searchForm').onsubmit = function() {
+        var query = this.query.value;
+        if (query) {
+            // Redirect to search.html with query parameter
+            this.action = '/searching';
+        } else {
+            // Prevent form submission if query is empty
+            return false;
+        }
+    };
+    document.addEventListener("DOMContentLoaded", () => {
+        const letters = document.querySelectorAll(".letter");
+    
+        function animateLetters() {
+            letters.forEach((letter, index) => {
+                letter.style.opacity = 0;  // Reset opacity
+                letter.style.animation = 'none';  // Reset animation
+                // Trigger reflow to restart the animation
+                letter.offsetHeight;
+                letter.style.animation = `fadeIn 0.5s forwards`;
+                letter.style.animationDelay = `${index * 0.3}s`;
+            });
+        }
+    
+        animateLetters();  // Initial animation
+        setInterval(animateLetters, 5000);  // Repeat animation every 5 seconds
+    });
+        
+    </script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+   
+    <header class="navbar">
+        <div class="marquee">
+            <div class="marquee-content">
+                Your Plant's Personal Guardian: Detecting Disease, Ensuring Care &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; Your Plant's Personal Guardian: Detecting Disease, Ensuring Care
+            </div>
+        </div>
+        <br><br>
+        <div class="logo">
+            <img src="/static/sara.png" alt="Guardiana Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        
+        <input type="search" placeholder="Search">
+        <div class="search">
+            <button onclick="window.location.href='/searching'" class="search-button">&#128269;</button>
+        </div>
+</input>
+        <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        <script>
+            function loadGoogleTranslate() {
+                new google.translate.TranslateElement("myid")
+            }
+        </script>
+        <div id="myid"></div>
+        
+        <div class="greeting">
+            Hello, Sara
+        </div>
+        
+        </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="inner-box">
+                <h1>Welcome to 
+                    <span class="letter">G</span>
+                    <span class="letter">u</span>
+                    <span class="letter">a</span>
+                    <span class="letter">r</span>
+                    <span class="letter">d</span>
+                    <span class="letter">i</span>
+                    <span class="letter">a</span>
+                    <span class="letter">n</span>
+                    <span class="letter">a</span>
+                </h1><script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const letters = document.querySelectorAll(".letter");
+            
+                        function animateLetters() {
+                            letters.forEach((letter, index) => {
+                                letter.style.opacity = 0;  // Reset opacity
+                                letter.style.animation = 'none';  // Reset animation
+                                // Trigger reflow to restart the animation
+                                letter.offsetHeight;
+                                letter.style.animation = `fadeIn 0.5s forwards`;
+                                letter.style.animationDelay = `${index * 0.3}s`;
+                            });
+                        }
+            
+                        animateLetters();  // Initial animation
+                        setInterval(animateLetters, 5000);  // Repeat animation every 5 seconds
+                    });
+                    </script>
+                
+                <p>Discover plant health with our AI-powered leaf analysis for accurate disease diagnosis and remedies. Learn about plant care and cultivation. Join us in creating a greener, healthier world.</p>
+</div>
+</div>
+</section>
+<div id="notification-modal">
+    <div id="modal-content">
+        <h2>GUARDIANA</h2>
+        <p>Would you like to receive notifications?</p>
+        <button id="allow-notifications">Yes</button>
+        <button id="deny-notifications">No</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('notification-modal');
+        modal.style.display = 'block';
+
+        document.getElementById('allow-notifications').addEventListener('click', () => {
+            requestNotificationPermission();
+            modal.style.display = 'none';
+        });
+
+        document.getElementById('deny-notifications').addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Request notification permission on page load
+        requestNotificationPermission();
+    });
+
+    function requestNotificationPermission() {
+        if ('Notification' in window) {
+            Notification.requestPermission().then(permission => {
+                console.log('Permission status:', permission);
+                if (permission === 'granted') {
+                    console.log('Notification permission granted.');
+                    showImmediateNotifications();
+                } else {
+                    console.log('Notification permission denied.');
+                }
+            }).catch(error => {
+                console.error('Permission request error:', error);
+            });
+        } else {
+            console.log('This browser does not support notifications.');
+        }
+    }
+
+    function showNotification(title, body) {
+        const options = {
+            body: body,
+            icon: 'https://via.placeholder.com/128',
+            badge: 'https://via.placeholder.com/64'
+        };
+        new Notification(title, options);
+    }
+
+    function showImmediateNotifications() {
+        const messages = [
+            "Hey there! I'm feeling a bit parched. Could you spare some water? 🌱💧",
+            "Good day, friend! It's me, your leafy companion. I'm longing for a refreshing drink. Care to oblige? 🌿💦",
+            "Hey, buddy! I'm feeling a bit wilted. Could you quench my thirst? 🌻💧",
+            "Hello there, green thumb! I'm in need of a drink to keep me looking my best. Would you mind watering me? 🌺💦",
+            "Hi, friend! I'm starting to feel a bit dry. A splash of water would really hit the spot! 🌼💧",
+            "Hey, plant lover! I'm craving a cool drink to beat the heat. Can you help me out? 🌞💧",
+            "Hello, plant pal! I'm feeling a bit parched. Could you give me a drink to perk me up? 🌻💦",
+            "Hi, gardener! I'm in need of a refreshing drink to keep me healthy and strong. Would you mind watering me? 🌱💧",
+            "Hey, plant enthusiast! I'm starting to feel a bit dehydrated. A drink would really revive me! 🌿💦",
+            "Hello, plant friend! I'm feeling a bit dry and crispy. A splash of water would be just what I need! 🌸💧"
+
+            // Add more messages as needed
+        ];
+        let delay = 0;
+
+        messages.forEach(message => {
+            setTimeout(() => {
+                showNotification("Plant Care Reminder", message);
+            }, delay);
+            delay += 20000; 
+        });
+    }
+</script>
+
+<section id="services" class="services">
+    <h1>Our Services</h1>
+    <br><br>
+<div class="circle-buttons">
+    <div class="container">
+        <div class="service-item">
+            <button class="circle-button" onclick="handleButtonClick(this, '/scanning')" type="button">
+                <img src="/static/scan.png" width="50px">
+            </button>
+            <h3>Disease Detection</h3>
+            <p>Analyzes leaf images to detect plant diseases and provide effective remedies</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="service-item">
+            <button class="circle-button" onclick="handleButtonClick(this, '/planty')" type="button">
+                <img src="/static/plannttt.png" width="50px">
+            </button>
+            <h3>Plant</h3>
+            <p>Get detailed information about various plants, including cultivation tips and benefits</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="service-item">
+            <button class="circle-button" onclick="handleButtonClick(this, '/chat')" type="button">
+                <img src="/static/chat.png" width="50px">
+            </button>
+            <h3>PlantAI</h3>
+            <p>Interact with our AI chatbot to get instant help and information about plant care</p>
+        </div>
+    </div>
+</div>
+</section>
+<script>
+function handleButtonClick(button, url) {
+    // Call the function to apply the circle button effect
+    applyCircleButtonEffect(button);
+
+    // Redirect to the specified URL
+    window.location.href = url;
+}
+
+function applyCircleButtonEffect(button) {
+    button.classList.add('effect'); // Add effect class to trigger animation
+
+    // Remove effect class after animation completes
+    setTimeout(function() {
+        button.classList.remove('effect');
+    }, 1000); // Adjust duration to match animation duration
+}
+</script>
+
+            </div>
+            </div>
+        </div>   
+    </section>
+    <br><br>
+    <section id="about" class="about-section" >
+        <div class="container">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>At <b><u>Guardiana</u></b>, we are passionate about revolutionizing plant health management through innovative technology.
+                    <br> Our mission is to empower farmers and plant enthusiasts with cutting-edge 
+                    solutions for disease detection, treatment, and care.</p>
+                <p>Join us in creating a greener, healthier world!</p>
+            </div>
+        </div>
+        <div class="container" id ="contact">
+            <div class="contact-content">
+                <h2>Get in Touch</h2>
+                <div class="contact-details">
+                    <p>If you have any questions or inquiries, feel free to reach out to us.<br> Our team is here to assist you.</p>
+                    <p>Address: Kinathukkadavu, Coimbatore</p>
+                    <p>Email: info@guardiana.com</p>
+                    <p>Phone: +91 9385824145</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Guardiana. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/saradawood_s/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@sadsyt1178" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/saradawoodssd" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        
+       
+    </footer>
+    
+
+</body>
+</html>
